@@ -41,7 +41,7 @@ export default function SignupPage() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "https://taskify-backend-production-5892.up.railway.app/api/auth/signup",
         {
           name,
           email,

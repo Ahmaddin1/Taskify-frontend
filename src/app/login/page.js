@@ -39,7 +39,7 @@ export default function LoginPage() {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post("http://localhost:5000/api/auth/login", {
+      const { data } = await axios.post("https://taskify-backend-production-5892.up.railway.app/api/auth/login", {
         email,
         password,
       });

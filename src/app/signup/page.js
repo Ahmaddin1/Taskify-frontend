@@ -40,7 +40,7 @@ export default function SignupPage() {
     e.preventDefault();
 
     try {
-      const { data } = await api.post("/auth/login", {
+      const { data } = await api.post("/auth/signup", {
         name,
         email,
         password,

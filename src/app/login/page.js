@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import axios from "axios";
+import api from "@/lib/api";
 import { toast } from "sonner";
 import { Eye, EyeOff } from "lucide-react";
 
@@ -39,7 +39,7 @@ export default function LoginPage() {
     e.preventDefault();
 
     try {
-      const { data } = await axios.post("https://taskify-backend-production-5892.up.railway.app/api/auth/login", {
+      const { data } = await api.post("/auth/login", {
         email,
         password,
       });
@@ -132,7 +132,9 @@ export default function LoginPage() {
                       type="button"
                       onClick={() => setShowPassword((prev) => !prev)}
                       className="absolute inset-y-0 right-0 flex w-14 items-center justify-center text-black/55 transition-colors duration-200 hover:text-black"
-                      aria-label={showPassword ? "Hide password" : "Show password"}
+                      aria-label={
+                        showPassword ? "Hide password" : "Show password"
+                      }
                     >
                       {showPassword ? <Eye size={18} /> : <EyeOff size={18} />}
                     </button>

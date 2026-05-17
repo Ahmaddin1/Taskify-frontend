@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://taskify-backend-production-5892.up.railway.app/api",
+  baseURL: "https://taskify-backend-qheu.onrender.com/api",
 });
 
 api.interceptors.request.use((config) => {
